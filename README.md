@@ -29,10 +29,10 @@ pkg install python git -y
 
 ```bash
 pip install requests cryptography
-
+```
 ### ⚙️ Setup
 
-Script utama bernama cek.py.
+Script utama bernama analisis.py
 Argumen yang wajib diberikan adalah alamat repo GitHub (format owner/repo atau URL lengkap).
 ```
 🔑 Opsi Tambahan:
@@ -40,7 +40,7 @@ Argumen yang wajib diberikan adalah alamat repo GitHub (format owner/repo atau U
 --no-save → hasil analisis tidak disimpan ke file, hanya ditampilkan di terminal.
 --max-file-bytes N → batasi ukuran maksimal file yang dianalisis (default 50 KB).
 --demo-encrypt → jalankan demo aman enkripsi & dekripsi dengan library cryptography.
-
+```
 ### 🚀 Cara Menjalankan
 
 1. Analisis repo dengan URL
