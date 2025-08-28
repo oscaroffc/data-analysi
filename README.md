@@ -1,1 +1,67 @@
-# data-analysi
+Tool ini digunakan untuk **menganalisis repository GitHub secara aman (read-only)**.  
+Fokus utama:
+- Menampilkan daftar file di repo
+- Menjelaskan bahasa & fungsi tiap script
+- Menandai potensi risiko (misalnya ransomware, DDoS, malware, dsb)
+- (Opsional) Menjalankan demo enkripsi/dekripsi aman dengan `cryptography` (tanpa merusak file)
+
+⚠️ **Catatan:**  
+Script ini hanya bersifat **analisis pasif**. Tidak ada bagian yang mengeksekusi kode dari repo target.
+
+---
+
+## 📦 Instalasi
+
+### 1. Clone atau Download
+```bash
+git clone https://github.com/username/analizer.git
+cd analizer
+
+2. Install Python & pip (jika belum)
+
+Untuk Termux:
+
+pkg update && pkg upgrade
+pkg install python git -y
+
+3. Install dependensi
+
+pip install requests cryptography
+
+
+---
+
+⚙️ Setup
+
+Script utama bernama cek.py.
+Argumen yang wajib diberikan adalah alamat repo GitHub (format owner/repo atau URL lengkap).
+
+🔑 Opsi Tambahan:
+
+--no-save → hasil analisis tidak disimpan ke file, hanya ditampilkan di terminal.
+
+--max-file-bytes N → batasi ukuran maksimal file yang dianalisis (default 50 KB).
+
+--demo-encrypt → jalankan demo aman enkripsi & dekripsi dengan library cryptography.
+
+
+
+---
+
+🚀 Cara Menjalankan
+
+1. Analisis repo dengan URL
+
+python3 cek.py https://github.com/mauri870/ransomware
+
+2. Analisis repo dengan format owner/repo
+
+python3 cek.py mauri870/ransomware
+
+3. Analisis tanpa menyimpan hasil
+
+python3 cek.py mauri870/ransomware --no-save
+
+4. Analisis dengan demo enkripsi/dekripsi aman
+
+python3 cek.py mauri870/ransomware --demo-encrypt
